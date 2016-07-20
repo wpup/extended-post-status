@@ -32,7 +32,7 @@ register_extended_post_status( 'obsolete', [
 ## Documentation
 
 ```php
-function register_extended_post_status( string $post_status, array $args = [], array $names = [] );
+function register_extended_post_status( string $post_status, array $args = [], array $names = [] )
 ```
 
 * `$post_status` is the name of the post status.
