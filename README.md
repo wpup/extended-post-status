@@ -17,15 +17,15 @@ composer require frozzare/wp-extended-post-status
 
 // Register `archive` status.
 register_extended_post_status( 'archive', [], [
-	'singular' => 'Archived'
+  'singular' => 'Archived'
 ] );
 
 // Register `obsolete` status.
 register_extended_post_status( 'obsolete', [
-  // Array of post type are supported
-	'post_type' => ['post', 'page']
+  // Which post type the post status should be registered on, array or string of post types.
+  'post_type' => ['post', 'page']
 ], [
-	'singular' => 'Obsolete'
+  'singular' => 'Obsolete'
 ] );
 ```
 
