@@ -1,5 +1,7 @@
 # Extended Post Status
 
+> Requires PHP 5.5.9
+
 A library which provides extended functionality to WordPress post type statuses.
 
 ## Installation
@@ -14,15 +16,14 @@ composer require frozzare/wp-extended-post-status
 <?php
 
 // Register `archive` status.
-register_extended_post_status( 'archive', [
-	'post_type' => 'post'
-], [
+register_extended_post_status( 'archive', [], [
 	'singular' => 'Archived'
 ] );
 
 // Register `obsolete` status.
 register_extended_post_status( 'obsolete', [
-	'post_type' => 'post'
+  // Array of post type are supported
+	'post_type' => ['post', 'page']
 ], [
 	'singular' => 'Obsolete'
 ] );
