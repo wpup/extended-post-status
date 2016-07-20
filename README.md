@@ -1,5 +1,7 @@
 # Extended Post Status
 
+A library which provides extended functionality to WordPress post type statuses.
+
 ## Example
 
 ```php
