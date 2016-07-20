@@ -2,6 +2,12 @@
 
 A library which provides extended functionality to WordPress post type statuses.
 
+## Installation
+
+```sh
+composer require frozzare/wp-extended-post-status
+```
+
 ## Example
 
 ```php
