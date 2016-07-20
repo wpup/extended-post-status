@@ -22,7 +22,7 @@ register_extended_post_status( 'archive', [], [
 
 // Register `obsolete` status.
 register_extended_post_status( 'obsolete', [
-  // Which post type the post status should be registered on, array or string of post types.
+  // Array or string of post types where post status should be registered
   'post_type' => ['post', 'page']
 ], [
   'singular' => 'Obsolete'
