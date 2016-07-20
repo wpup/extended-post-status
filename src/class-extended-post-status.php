@@ -56,6 +56,16 @@ final class Extended_Post_Status {
         $this->names = array_merge( $this->names, $names );
         $this->status = sanitize_key( $status );
 
+        // Set post status name as singular name if singular name if empty.
+        if ( empty( $this->names['singular'] ) ) {
+            $this->names['singular'] = $this->status;
+        }
+
+        // Set singular name as plural name if plural name if empty.
+        if ( empty( $this->names['plural'] ) ) {
+            $this->names['plural'] = $this->names['singular'] . 's';
+        }
+
         $this->setup_actions();
         $this->setup_filters();
         $this->register();
@@ -99,16 +109,6 @@ final class Extended_Post_Status {
         $plural   = esc_html( $this->names['plural'] );
         $singular = esc_html( $this->names['singular'] );
         $text     = ' <span class="count">(%s)</span>';
-
-        // Set post status name as singular name if singular name if empty.
-        if ( empty( $singular ) ) {
-            $singular = $this->status;
-        }
-
-        // Set singular name as plural name if plural name if empty.
-        if ( empty( $plural ) ) {
-            $plural = $singular . 's';
-        }
 
         // @codingStandardsIgnoreStart
         return _n_noop(
@@ -172,6 +172,15 @@ final class Extended_Post_Status {
         jQuery(function($) {
             $('#post_status')
                 .append('<option value="<?php echo esc_attr( $this->status ); ?>"><?php echo esc_html( $this->names['singular'] ); ?></option>');
+
+            $('#post_status').on('change', function () {
+                var $this = $(this);
+                var val = $this.val();
+
+                if (val === '<?php echo esc_attr( $this->status ); ?>') {
+                    $('#save-post').val('<?php esc_html_e( 'Save' ); ?> <?php echo $this->names['singular']; ?>');
+                }
+            })
         });
         </script>
         <?php
