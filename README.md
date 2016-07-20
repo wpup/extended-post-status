@@ -39,7 +39,7 @@ function register_extended_post_status( string $post_status, array $args = [], a
 * `$args` is a array of arguments for this post status, the same as for `register_post_status` plus `post_type` argument.
 * `$names` is a array of `singular` and `plural` that is used as names for `label_count` if empty.
 
-Differents from `register_post_status` arguments:
+Differences from `register_post_status` arguments:
 
 * `public` has `true` as default value instead of `false`
 * `show_in_admin_status_list` has `true` as default value instead of `false`
