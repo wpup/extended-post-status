@@ -56,9 +56,13 @@ final class Extended_Post_Status {
         $this->names = array_merge( $this->names, $names );
         $this->status = sanitize_key( $status );
 
-        // Set post status name as singular name if singular name if empty.
+        // Set post status name or label as singular name if singular name if empty.
         if ( empty( $this->names['singular'] ) ) {
-            $this->names['singular'] = $this->status;
+            if ( empty( $this->args['label'] ) ) {
+                $this->names['singular'] = $this->status;
+            } else {
+                $this->names['singular'] = $this->args['label'];
+            }
         }
 
         // Set singular name as plural name if plural name if empty.
