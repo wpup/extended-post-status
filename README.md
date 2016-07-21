@@ -15,9 +15,9 @@ composer require frozzare/wp-extended-post-status
 ```php
 <?php
 
-// Register `archive` status.
-register_extended_post_status( 'archive', [], [
-  'singular' => 'Archived'
+// Register `old` status.
+register_extended_post_status( 'old', [], [
+  'singular' => 'Old'
 ] );
 
 // Register `obsolete` status.
