@@ -176,7 +176,7 @@ final class Extended_Post_Status {
             var btnText = '<?php echo str_replace( __( 'Pending' ), '', __( 'Save as Pending' ) ); ?>' +
                 '<?php esc_html_e( $this->names['singular'] ); ?>';
 
-            <?php if ($post->post_status === $this->status): ?>
+            <?php if ( $post->post_status === $this->status ): ?>
                 $('#save-post').val(btnText);
             <?php endif; ?>
 
