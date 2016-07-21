@@ -173,13 +173,15 @@ final class Extended_Post_Status {
             $('#post_status')
                 .append('<option value="<?php echo esc_attr( $this->status ); ?>"><?php echo esc_html( $this->names['singular'] ); ?></option>');
 
-            $('#post_status').on('change', function () {
-                var $this = $(this);
-                var val = $this.val();
-
-                if (val === '<?php echo esc_attr( $this->status ); ?>') {
-                    $('#save-post').val('<?php esc_html_e( 'Save' ); ?> <?php echo $this->names['singular']; ?>');
+            $('.save-post-status').on('click', function () {
+                if ($('#post_status').val() !== '<?php echo esc_attr( $this->status ); ?>') {
+                    return;
                 }
+
+                var text = '<?php echo str_replace( __( 'Pending' ), '', __( 'Save as Pending' ) ); ?>';
+
+                $('#save-post')
+                    .val(text + '<?php esc_html_e( $this->names['singular'] ); ?>');
             })
         });
         </script>
@@ -190,8 +192,11 @@ final class Extended_Post_Status {
             ?>
             <script>
             jQuery(function($) {
-                $('#post-status-display').text('<?php echo esc_html( $this->names['singular'] ); ?>');
-                $('#post_status').val('<?php echo esc_html( $this->status ); ?>');
+                $('#post-status-display')
+                    .text('<?php echo esc_html( $this->names['singular'] ); ?>');
+
+                $('#post_status')
+                    .val('<?php echo esc_html( $this->status ); ?>');
             });
             </script>
             <?php
