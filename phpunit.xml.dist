@@ -15,7 +15,7 @@
   verbose="true"
   >
   <testsuites>
-    <testsuite name="WC Export Test Suite">
+    <testsuite name="Extended Post Status Test Suite">
       <directory suffix=".php">./tests/</directory>
     </testsuite>
   </testsuites>
