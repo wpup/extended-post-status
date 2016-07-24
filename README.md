@@ -44,6 +44,6 @@ Differences from `register_post_status` arguments:
 * `public` has `true` as default value instead of `false`
 * `show_in_admin_status_list` has `true` as default value instead of `false`
 
-# License
+## License
 
 MIT © [Fredrik Forsmo](https://github.com/frozzare)
