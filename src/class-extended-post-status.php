@@ -82,7 +82,7 @@ final class Extended_Post_Status {
         global $post;
 
         // Only valid post types.
-        if ( ! in_array( $post->post_type, $this->get_post_type() ) ) {
+        if ( ! $this->valid_post_type( $post->post_type ) ) {
             return;
         }
 
@@ -166,7 +166,7 @@ final class Extended_Post_Status {
         global $post;
 
         // Only valid post types.
-        if ( ! in_array( $post->post_type, $this->get_post_type() ) ) {
+        if ( ! $this->valid_post_type( $post->post_type ) ) {
             return;
         }
 
@@ -221,7 +221,7 @@ final class Extended_Post_Status {
      */
     public function post_states( array $post_states, $post ) {
         // Only valid post types.
-        if ( ! in_array( $post->post_type, $this->get_post_type() ) ) {
+        if ( ! $this->valid_post_type( $post->post_type ) ) {
             return $post_states;
         }
 
@@ -249,5 +249,22 @@ final class Extended_Post_Status {
      */
     protected function setup_filters() {
         add_filter( 'display_post_states', [$this, 'post_states'], 10, 2 );
+    }
+
+    /**
+     * Check if post type is valid or not.
+     *
+     * @param  string $post_type
+     *
+     * @return bool
+     */
+    protected function valid_post_type( $post_type ) {
+		$post_types = $this->get_post_type();
+
+		if ( in_array( 'any', $post_types ) ) {
+			return true;
+		}
+
+		return in_array( $post_type, $post_types );
     }
 }
