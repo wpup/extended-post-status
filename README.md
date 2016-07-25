@@ -36,7 +36,7 @@ function register_extended_post_status( string $post_status, array $args = [], a
 ```
 
 * `$post_status` is the name of the post status.
-* `$args` is a array of arguments for this post status, the same as for `register_post_status` plus `post_type` argument, which should be array or string of post types where post status should be registered.
+* `$args` is a array of arguments for this post status, the same as for `register_post_status` plus `post_type` argument, which should be array or string of post types where post status should be registered ('any' can also be passed).
 * `$names` is a array of `singular` and `plural` that is used as names for `label_count` if empty.
 
 Differences from `register_post_status` arguments:
