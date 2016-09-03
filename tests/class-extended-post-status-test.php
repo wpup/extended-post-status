@@ -22,6 +22,14 @@ class Extended_Post_Status_Test extends WP_UnitTestCase {
         $this->assertSame( 'Car', $post_status_object->label );
     }
 
+    public function test_post_states_bad_post_object() {
+        $class = new Extended_Post_Status( 'car', [
+            'label' => 'Car'
+        ] );
+
+        $this->assertSame( [], $class->post_states( [], null ) );
+    }
+
     public function test_post_states_wrong_post_type() {
         $class = new Extended_Post_Status( 'car', [
             'label' => 'Car'
