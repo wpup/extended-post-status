@@ -81,7 +81,12 @@ final class Extended_Post_Status {
     public function edit_screen_js() {
         global $post;
 
-        // Only valid post types.
+        // Bail if post is not a object.
+        if ( ! is_object( $post ) ) {
+            return;
+        }
+
+        // Bail if post type is not valid.
         if ( ! $this->valid_post_type( $post->post_type ) ) {
             return;
         }
@@ -165,7 +170,12 @@ final class Extended_Post_Status {
     public function post_screen_js() {
         global $post;
 
-        // Only valid post types.
+        // Bail if post is not a object.
+        if ( ! is_object( $post ) ) {
+            return;
+        }
+
+        // Bail if post type is not valid.
         if ( ! $this->valid_post_type( $post->post_type ) ) {
             return;
         }
@@ -220,7 +230,12 @@ final class Extended_Post_Status {
      * @return array
      */
     public function post_states( array $post_states, $post ) {
-        // Only valid post types.
+        // Bail if post is not a object.
+        if ( ! is_object( $post ) ) {
+            return $post_states;
+        }
+
+        // Bail if post type is not valid.
         if ( ! $this->valid_post_type( $post->post_type ) ) {
             return $post_states;
         }
