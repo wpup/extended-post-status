@@ -187,11 +187,15 @@ final class Extended_Post_Status {
             $('#post_status')
                 .append('<option value="<?php echo esc_attr( $this->status ); ?>"><?php echo esc_html( $this->names['singular'] ); ?></option>');
 
-            var btnText = '<?php echo str_replace( __( 'Pending' ), '', __( 'Save as Pending' ) ); ?>' +
+			var btnText = '<?php echo str_replace( __( 'Pending' ), '', __( 'Save as Pending' ) ); ?>' +
+                '<?php esc_html_e( $this->names['singular'] ); ?>';
+            var updText = '<?php echo str_replace( __( 'Pending' ), '', __( 'Save Pending' ) ); ?>' +
                 '<?php esc_html_e( $this->names['singular'] ); ?>';
 
             <?php if ( $post->post_status === $this->status ): ?>
-                $('#save-post').val(btnText);
+                window.postL10n.savePending = window.postL10n.saveDraft = updText;
+
+            	$('#save-post').val(btnText);
             <?php endif; ?>
 
             $('.save-post-status').on('click', function () {
