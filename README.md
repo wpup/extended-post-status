@@ -1,4 +1,4 @@
-# Extended Post Status [![Build Status](https://travis-ci.org/frozzare/wp-extended-post-status.svg?branch=master)](https://travis-ci.org/frozzare/wp-extended-post-status)
+# Extended Post Status [![Build Status](https://travis-ci.org/wpup/extended-post-status.svg?branch=master)](https://travis-ci.org/wpup/extended-post-status)
 
 > Requires PHP 5.5.9
 
