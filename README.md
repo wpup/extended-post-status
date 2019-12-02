@@ -1,4 +1,7 @@
-# Extended Post Status [![Build Status](https://travis-ci.org/wpup/extended-post-status.svg?branch=master)](https://travis-ci.org/wpup/extended-post-status)
+# Extended Post Status 
+
+[![Build Status](https://travis-ci.org/wpup/extended-post-status.svg?branch=master)](https://travis-ci.org/wpup/extended-post-status)
+[![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
 
 > Requires PHP 5.5.9
 
